@@ -4,7 +4,9 @@
 *.xml
 *.cproject
 *.ino.cpp
-
+*.project
+config.h
+Release/
 
 # Compiled source #
 ###################
