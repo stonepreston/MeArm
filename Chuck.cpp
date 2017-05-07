@@ -47,9 +47,9 @@ int Chuck::getData() {
     setY(buffer[1]);
     setZ(1);
     setC(1);
-    // byte nunchuck_buf[5] contains bits for z and c buttons
+    // byte buffer[5] contains bits for z and c buttons
     // it also contains the least significant bits for the accelerometer data
-    // so we have to check each bit of byte outbuf[5]
+    // so we have to check each bit of byte  buffer[5]
     if ((buffer[5] >> 0) & 1)
       setZ(0);
     if ((buffer[5] >> 1) & 1)
