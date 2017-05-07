@@ -47,6 +47,13 @@ void Wifi::runServer() {
 	// checking for a connection.
 	ESP8266Client client = server.available(500);
 
+	String html = "<link rel=\"icon\" href=\"data:,\">\r\n"
+            "<a href=\"/?toggle=1\"><button>Toggle 1</button></a>\r\n"
+            "<a href=\"/?toggle=2\"><button>Toggle 2</button></a>\r\n"
+            "<a href=\"/?toggle=3\"><button>Toggle 3</button></a>\r\n"
+            "<a href=\"/?toggle=4\"><button>Toggle 4</button></a>\r\n"
+            "</html>\r\n";
+
 	if (client) {
 		Serial.println(F("Client Connected!"));
 		// an http request ends with a blank line
