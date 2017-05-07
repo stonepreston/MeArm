@@ -51,25 +51,29 @@ void loop()
 
 	if (success == 1) {
 
-		// No buttons pressed
+		// Ensure we arent at neutral stick position (or relatively close to it)
 		if ( !(chuck.getX() >= 120 && chuck.getX() <= 130) ) {
 
+		  int servoAngle = (chuck.getX()-25) * .6;
+
+		  // No buttons pressed
 		  if (chuck.getC() == 0 && chuck.getZ() == 0) {
-			middle.write((chuck.getX()-25) * .6);
+			middle.write(servoAngle);
 		  }
 
 		  // Z button pressed
 		  if (chuck.getC() == 0 && chuck.getZ() == 1) {
-			left.write((chuck.getX()-25) * .6);
+			left.write(servoAngle);
 		  }
 
 		  // C button pressed
 		  if (chuck.getC() == 1 && chuck.getZ() == 0) {
-			right.write((chuck.getX()-25) * .6);
+			right.write(servoAngle);
 		  }
 
 		}
 
+		// Delay a bit so we dont burn out servo motors
 		delay(15);
 
 	}
