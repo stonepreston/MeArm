@@ -16,7 +16,7 @@ Servo middle, left, right;
 Chuck chuck;
 
 
-Wifi wifi(configName, configPass);
+// Wifi wifi(configName, configPass);
 
 void setup()
 {
@@ -35,7 +35,8 @@ void setup()
 //	wifi.connectESP8266();
 //	wifi.displayConnectionInfo();
 //	wifi.setupServer();
-//	Serial.print("Finished setup");
+
+	Serial.print("Finished setup");
 
 }
 
