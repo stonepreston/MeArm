@@ -5,6 +5,12 @@
  *      Author: stonepreston
  */
 
+ /*
+ * The Wii Nunchuck reading code is taken from Windmeadow Labs
+ *   http://www.windmeadow.com/node/42
+ */
+
+
 #include "Chuck.h"
 #include <Wire.h>
 
