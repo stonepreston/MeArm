@@ -1,6 +1,8 @@
 #ifndef Wifi_H
 #define Wifi_H
 
+#include <SparkFunESP8266WiFi.h>
+
 class Wifi {
 
   private:
@@ -8,7 +10,7 @@ class Wifi {
     // Properties
     String networkName;
     String networkPassword;
-    ESP8266Server server;
+    ESP8266Server server = ESP8266Server(80);
     const String htmlHeader = "HTTP/1.1 200 OK\r\n"
                               "Content-Type: text/html\r\n"
                               "Connection: close\r\n\r\n"

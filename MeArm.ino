@@ -2,6 +2,7 @@
 #include <Servo.h>
 #include "Chuck.h"
 #include "Wifi.h"
+#include <SoftwareSerial.h>
 
 // The config file contains Wifi name/password info. It is not in version control
 #include "config.h"
@@ -16,8 +17,6 @@ Servo middle, left, right;
 // Create Chuck object
 Chuck chuck;
 
-// Create Wifi object and pass in the config values
-Wifi wifi(configName, configPass);
 
 
 void setup()
@@ -30,6 +29,8 @@ void setup()
 	chuck.init();
 
 	// Wifi setup
+	// Create Wifi object and pass in the config values
+	Wifi wifi(configName, configPass);
 	wifi.initializeESP8266();
 	wifi.connectESP8266();
 	wifi.displayConnectionInfo();
@@ -42,7 +43,7 @@ void loop()
 {
 
 	// Check for network control data
-	wifi.runServer();
+	//wifi.runServer();
 
 	// Check for local control data
 	int success = chuck.getData();

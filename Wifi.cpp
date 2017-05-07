@@ -1,6 +1,5 @@
 #include <Arduino.h>
 #include <SoftwareSerial.h>
-#include <SparkFunESP8266WiFi.h>
 #include "Wifi.h"
 
 // Constructor
@@ -8,7 +7,6 @@ Wifi::Wifi(String name, String password) {
 
   networkName = name;
   networkPassword = password;
-  server = ESP8266Server(80);
 
 }
 
